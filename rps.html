@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate RPS</title>
+    <link rel="stylesheet" href="rps.js" />
+    <link rel="stylesheet" href="rps.css" />
+    <link rel="stylesheet" href="rps-logic.css" />
+    <script src="rps.js"></script>
+  </head>
+
+  <body>
+    <div class="Title"><h1>Rock, Paper, Scissors!</h1></div>
+    <div class="master">
+      <div class="arena-container" id="input">
+        <div class="start-container">
+          <center>
+            <button
+              class="start"
+              onclick="getElementById('rps-computer').innerHTML= getComputerChoice()"
+              onclick="getElementById('rps-computer').innerHTML= getComputerChoice()"
+            >
+              START
+            </button>
+          </center>
+        </div>
+
+        <div class="names-container">
+          <div class="player-name">Player</div>
+          <div class="computer-name">Computer</div>
+        </div>
+        <div class="innerArena-choices-container">
+          <div class="player-choices-container">
+            <!-- start of player choices -->
+            <button class="player-choices">rock</button>
+            <button class="player-choices">paper</button>
+            <button class="player-choices">scissors</button>
+          </div>
+          <!-- rps div is the rps arena -->
+          <div id="rps">
+            <div id="rps-player"></div>
+            <div id="rps-computer"></div>
+          </div>
+
+          <div class="computer-choices-container">
+            <!-- start of computer choices -->
+            <button class="computer-choices">rock</button>
+            <button class="computer-choices">paper</button>
+            <button class="computer-choices">scissors</button>
+          </div>
+        </div>
+        <div class="scores-container">
+          <div class="player-score">0</div>
+          <div class="computer-score">0</div>
+        </div>
+      </div>
+    </div>
+    <button onclick="getElementById('testing').innerHTML=Date()">
+      Press This Button
+    </button>
+    <div id="testing"></div>
+  </body>
+</html>
