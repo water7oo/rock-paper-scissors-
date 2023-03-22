@@ -5,18 +5,19 @@
 //If either player or cpu reach 5 points, run the winners name on screen with a restart button
 
 //Computers randomly generates rps
+
 console.log("Player:");
+//Output of this function is the random string
 function getComputerChoice() {
   const rps = ["rock", "paper", "scissors"];
   let random = Math.floor(Math.random() * rps.length);
   let randomrps = rps[random];
   console.log(randomrps);
-  //document.getElementsByClassName("testing").innerHTML = getComputerChoice();
   return randomrps;
 }
-
+//output of this function is the player input depending on rpsPlayerInput
 function getPlayerChoice() {
-  let rpsPlayerInput = "rock";
+  let rpsPlayerInput = "paper";
   return rpsPlayerInput;
 }
 console.log(getPlayerChoice());
@@ -27,31 +28,80 @@ let computer = getComputerChoice();
 let player = getPlayerChoice();
 
 //The logic of RPS
-if (computer == player) {
-  console.log("DRAW");
-} else if (computer == "rock" && player == "scissors") {
-  console.log("computer has won");
-} else if (computer == "paper" && player == "rock") {
-  console.log("computer has won");
-} else if (computer == "scissors" && player == "paper") {
-  console.log("computer has won");
-} else if (computer == "paper" && player == "scissors") {
-  console.log("player has won");
-} else if (computer == "scissors" && player == "rock") {
-  console.log("player has won");
-} else if (computer == "rock" && player == "paper") {
-  console.log("player has won");
+function results() {
+  if (computer == player) {
+    return "DRAW";
+  } else if (computer == "rock" && player == "scissors") {
+    return "computer has won";
+  } else if (computer == "paper" && player == "rock") {
+    return "computer has won";
+  } else if (computer == "scissors" && player == "paper") {
+    return "computer has won";
+  } else if (computer == "paper" && player == "scissors") {
+    return "player has won";
+  } else if (computer == "scissors" && player == "rock") {
+    return "player has won";
+  } else if (computer == "rock" && player == "paper") {
+    return "player has won";
+  }
 }
 
-///const startbutton = document.querySelector("start");
+console.log(results());
 
-//button.addEventListener("click", () => {
-// console.log("Button clicked.");
-//});
+// Below is the previous code from the HTML document
+function winnerDecide() {
+  let playerArea = document.getElementById("rps-player-area");
+  let computerArea = document.getElementById("rps-computer-area");
 
-function testing() {
-  const testing = document.querySelector("start");
-  return testing;
+  if (
+    playerArea.innerHTML.includes("rock") &&
+    computerArea.innerHTML.includes("scissors")
+  ) {
+    return "Player has won";
+  } else if (
+    playerArea.innerHTML.includes("paper") &&
+    computerArea.innerHTML.includes("rock")
+  ) {
+    return "Player has won";
+  } else if (
+    playerArea.innerHTML.includes("scissors") &&
+    computerArea.innerHTML.includes("paper")
+  ) {
+    return "Player has won";
+  } else if (
+    playerArea.innerHTML.includes("scissors") &&
+    computerArea.innerHTML.includes("rock")
+  ) {
+    return "Computer has won";
+  } else if (
+    playerArea.innerHTML.includes("rock") &&
+    computerArea.innerHTML.includes("paper")
+  ) {
+    return "Computer has won";
+  } else if (
+    playerArea.innerHTML.includes("paper") &&
+    computerArea.innerHTML.includes("scissors")
+  ) {
+    return "Computer has won";
+  }
 }
 
-console.log(testing());
+//Player buttons are player-choices
+//Player area is rps-player-area
+let playerOption = document.getElementById("player-choices");
+let playerDiv = document.getElementById("rps-player-area");
+let clicked = false;
+playerOption.onclick = function () {
+  playerDiv.innerHTML = "Rock";
+  console.log("THE BUTTON WAS CLICKED");
+  clicked = true;
+};
+if ((clicked = true)) {
+  console.log("ITS WORKINGGG WWHHHHAAAAATTTT");
+}
+
+let computerStart = document.getElementById("start");
+computerStart.onclick = function () {
+  console.log("THE Game has started!");
+  getComputerChoice();
+};
