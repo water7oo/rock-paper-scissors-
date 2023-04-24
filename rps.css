@@ -1,6 +1,9 @@
 body{
-  background-color: rgb(135, 215, 255);
+  background-color: rgb(0, 0, 0);
+  color: white;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .Title{
   border: none rgb(0, 0, 255);
   display: flex;
@@ -17,9 +20,10 @@ body{
 /* -------- */
 .arena-container{
   justify-content: center;
-  border: none rgb(255, 0, 221);
+  border: solid 5px white;
+  border-radius: 20px;
   width: 800px;
-  padding: 40px;
+  padding: 20px;
 }
 /* -------- */
 .statsContainer{
@@ -63,7 +67,7 @@ body{
   flex: 1;
   border: none red;
   text-align: center;
-  font-size: 20pt;
+  font-size: 25pt;
 }
 /* ------- */
 .innerArena-choices-container{
@@ -77,11 +81,43 @@ body{
   border: none rgb(20, 255, 87);
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 .player-choices{
   border: none red;
-  padding: 20px;
-  width: 200px;
+  width: 150px;
+  height: 130px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.player-choices:hover{
+  cursor: pointer;
+  background-color: rgb(188, 188, 188);
+  transform: scale(1.1);
+  
+}
+
+.player-choices:active{
+  transform: rotate(6deg);
+}
+
+.player-choices:target{
+  background-color: rebeccapurple;
+}
+
+.scissors-image{
+  height: 50px;
+  width: 70px;
+}
+
+.rock-image{
+  height: 122px;
+  width: 104px;
+
+}
+.paper-image{
+  height: 65px;
+    width: 69px;
 }
 
 /* -------- */
@@ -123,9 +159,4 @@ body{
   flex: 1;
   border: none blue;
   font-size: 20pt;
-}
-/*  */
-#testing{
-  border: none orange;
-  padding: 40px;
 }
