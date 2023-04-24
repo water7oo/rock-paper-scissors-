@@ -1,12 +1,12 @@
 .Title{
-  border: solid red;
+  border: none rgb(0, 0, 255);
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 /* ----- */
 .master{
-  border: solid black;
+  border: none black;
   padding: 50px;
   justify-content: center;
   display: flex;
@@ -14,13 +14,13 @@
 /* -------- */
 .arena-container{
   justify-content: center;
-  border: solid red;
+  border: none rgb(255, 0, 221);
   width: 800px;
   padding: 40px;
 }
 /* -------- */
 .start-container{
-  border: solid red;
+  border: none red;
   justify-content: center;
 }
 
@@ -30,74 +30,77 @@
 }
 /* -------- */
 .names-container{
-  border: solid red;
+  border: none rgb(243, 255, 9);
   display: flex;
 }
 
 .names-container div{
   flex: 1;
-  border: solid red;
+  border: none red;
   text-align: center;
   font-size: 20pt;
 }
 /* ------- */
 .innerArena-choices-container{
-  border: solid rgb(255, 0, 187);
+  border: none rgb(255, 0, 187);
   display: flex;
+  flex-direction: column;
   width: 800px;
 }
 /* ------- */
 .player-choices-container{
-  border: solid red;
-  flex-direction: column;
+  border: none rgb(20, 255, 87);
   display: flex;
+  justify-content: center;
 }
 .player-choices{
-  border: solid red;
-  padding: 45px;
+  border: none red;
+  padding: 20px;
+  width: 200px;
 }
 
 /* -------- */
 #rps{
-  border: solid blue;
+  border: none rgb(234, 255, 0);
   text-align: center;
-  flex: 1;
-  /* display: flex; */
-  /* justify-content: center; */
+  display: flex;
   align-items: center;
-  padding: 40px;
-  gap: 25px;
+  justify-content: center;
 }
 
 #rps div{
-  border: solid red;
+  border: none red;
   padding: 70px;
   height: 3px;
 }
+
+#winner{
+  padding: 200px;
+}
 /* --------- */
 .computer-choices{
-  border: solid red;
+  border: none red;
   padding: 45px;
 }
 .computer-choices-container{
-  border: solid red;
+  border: none red;
   flex-direction: column;
   display: flex;
 }
 /* ------- */
 .scores-container{
-  border: solid red;
+  border: none red;
   display: flex;
 }
 
 .scores-container div{
   text-align: center;
   flex: 1;
-  border: solid blue;
+  border: none blue;
   font-size: 20pt;
 }
 /*  */
 #testing{
-  border: solid orange;
+  border: none orange;
   padding: 40px;
 }

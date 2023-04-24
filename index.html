@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate RPS</title>
+    <link rel="stylesheet" href="rps.css" />
+    <link rel="stylesheet" href="rps-logic.css" />
+  </head>
+  <body>
+    <div class="Title"><h1>Rock, Paper, Scissors!</h1></div>
+    <div class="master">
+      <div class="arena-container" id="input">
+        <div class="names-container">
+          <div class="player-name">Player</div>
+          <div class="computer-name">Computer</div>
+        </div>
+        <div class="innerArena-choices-container">
+          <div class="scores-container">
+            <div class="player-score">0</div>
+            <div class="computer-score">0</div>
+          </div>
+          <!-- rps div is the rps arena -->
+          <div id="rps">
+            <div id="rps-player-area">Waiting on Player...</div>
+            <div id="winner"></div>
+            <div id="rps-computer-area">Waiting on CPU...</div>
+          </div>
+
+          <div class="player-choices-container">
+            <!-- start of player choices -->
+            <button class="player-choices" id="player-rock">Rock</button>
+            <button class="player-choices" id="player-paper">Paper</button>
+            <button class="player-choices" id="player-scissors">
+              Scissors
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="game.js" defer></script>
+  </body>
+</html>
