@@ -62,8 +62,8 @@
   border: solid blue;
   text-align: center;
   flex: 1;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   align-items: center;
   padding: 40px;
   gap: 25px;
