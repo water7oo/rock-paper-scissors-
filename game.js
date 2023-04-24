@@ -1,15 +1,18 @@
-//Pseudo Code:
-//Player presses start
-//If both player and cpu variables contain a string, run the winDecide() function
-//If either player or cpu reach 5 points, run the winners name on screen with a restart button
-
 var computerSelection = getComputerInput();
 var playerSelection;
 var rpsGame = game();
 let gameStarted = false;
+let roundsPlayed = 1;
+let winsObtained = 0;
+let lossesObtained = 0;
 
 document.getElementById("rps-computer-area").innerHTML = "Waiting on CPU...";
 document.getElementById("winner").innerHTML = "";
+document.getElementById("winsContainer").innerHTML = "Wins: " + winsObtained;
+document.getElementById("loserContainer").innerHTML =
+  "Losses: " + lossesObtained;
+
+document.getElementById("roundCount").innerHTML = "Make Your Move!";
 
 // Adds event listeners to buttons
 document.getElementById("player-rock").addEventListener("click", function () {
@@ -18,6 +21,7 @@ document.getElementById("player-rock").addEventListener("click", function () {
     const computerSelection = getComputerInput();
     console.log(game(playerSelection, computerSelection));
     updateScores();
+    document.getElementById("roundCount").innerHTML = "Round " + roundsPlayed++;
   }
 });
 
@@ -27,6 +31,7 @@ document.getElementById("player-paper").addEventListener("click", function () {
     const computerSelection = getComputerInput();
     console.log(game(playerSelection, computerSelection));
     updateScores();
+    document.getElementById("roundCount").innerHTML = "Round " + roundsPlayed++;
   }
 });
 
@@ -38,6 +43,8 @@ document
       const computerSelection = getComputerInput();
       console.log(game(playerSelection, computerSelection));
       updateScores();
+      document.getElementById("roundCount").innerHTML =
+        "Round " + roundsPlayed++;
     }
   });
 
@@ -96,15 +103,6 @@ function game(playerSelection, computerSelection) {
   //update rounds played
   roundsPlayed++;
 
-  // // check if someone has won best of 5
-  // if (playerScore === 5 || computerScore === 5) {
-  //   if (playerScore > computerScore) {
-  //     scoreElement.textContent += "\n\nPlayer wins best of 5!";
-  //   } else {
-  //     scoreElement.textContent += "\n\nComputer wins best of 5!";
-  //   }
-  // }
-
   //Displays results in the results div
   let resultsElement = document.getElementById("winner");
   resultsElement.innerHTML = results;
@@ -118,20 +116,33 @@ let computerScore = 0;
 function updateScores() {
   let resultsDiv = document.getElementById("winner").innerHTML;
 
+  //Point distribution
   if (resultsDiv == "Player has won") {
     playerScore++;
   } else if (resultsDiv == "Computer has won") {
     computerScore++;
   }
 
-  if (playerScore == 3) {
+  //Updates the win count and loss count
+  if (playerScore == 3 || computerScore == 3) {
+    //Checks if either player or computer has reached 3 points
+    if (playerScore == 3) {
+      winsObtained++;
+      document.getElementById("winsContainer").innerHTML =
+        "Wins: " + winsObtained;
+    }
+    if (computerScore == 3) {
+      lossesObtained++;
+      document.getElementById("loserContainer").innerHTML =
+        "Losses: " + lossesObtained;
+    }
+    //Resets the scores and rounds played count
     playerScore = 0;
-    console.log("Player has won the game!");
-  } else if (computerScore == 3) {
     computerScore = 0;
-    console.log("Computer has won the game!");
+    roundsPlayed = 1;
   }
 
+  //Updates scores on website
   document.getElementsByClassName(
     "player-score"
   )[0].textContent = ` ${playerScore}`;
