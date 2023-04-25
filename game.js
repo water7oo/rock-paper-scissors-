@@ -6,11 +6,25 @@ let roundsPlayed = 1;
 let winsObtained = 0;
 let lossesObtained = 0;
 
-document.getElementById("rps-computer-area").innerHTML = "Waiting on CPU...";
-document.getElementById("winner").innerHTML = "";
-document.getElementById("winsContainer").innerHTML = "Wins: " + winsObtained;
-document.getElementById("loserContainer").innerHTML =
-  "Losses: " + lossesObtained;
+document.getElementById("playAgain").addEventListener("click", function () {
+  playerScore = 0;
+  computerScore = 0;
+  roundsPlayed = 1;
+  document.getElementsByClassName("player-score")[0].textContent = " 0";
+  document.getElementsByClassName("computer-score")[0].textContent = " 0";
+  document.getElementById("winsContainer").innerHTML = "Wins: " + winsObtained;
+  document.getElementById("loserContainer").innerHTML =
+    "Losses: " + lossesObtained;
+  document.getElementById("roundCount").innerHTML = "Make Your Move!";
+  document.getElementById("rps-computer-area").innerHTML = "Waiting on CPU...";
+  document.getElementById("winner").innerHTML = "";
+  document.getElementById("playAgain").style.display = "none";
+
+  document.getElementById("player-rock").disabled = false;
+  document.getElementById("player-paper").disabled = false;
+  document.getElementById("player-scissors").disabled = false;
+  gameStarted = false;
+});
 
 document.getElementById("roundCount").innerHTML = "Make Your Move!";
 
@@ -130,16 +144,24 @@ function updateScores() {
       winsObtained++;
       document.getElementById("winsContainer").innerHTML =
         "Wins: " + winsObtained;
+      document.getElementById("player-rock").disabled = true;
+      document.getElementById("player-paper").disabled = true;
+      document.getElementById("player-scissors").disabled = true;
     }
     if (computerScore == 3) {
       lossesObtained++;
       document.getElementById("loserContainer").innerHTML =
         "Losses: " + lossesObtained;
+      document.getElementById("player-rock").disabled = true;
+      document.getElementById("player-paper").disabled = true;
+      document.getElementById("player-scissors").disabled = true;
     }
     //Resets the scores and rounds played count
     playerScore = 0;
     computerScore = 0;
     roundsPlayed = 1;
+    document.getElementById("playAgain").style.display = "block";
+    document.getElementById("playAgain").innerHTML = "Play Again";
   }
 
   //Updates scores on website

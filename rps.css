@@ -4,16 +4,13 @@ body{
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-img {
-  /* max-width: 100%; */
-  /* height: auto; */
-}
+/* ----------- */
 
 @media screen  and (max-width: 700px){
   body {
     height: 50px;
     font-size: 10pt;
-    /* flex: 1 0 130px; */
+    flex: 1 0 130px;
   }
 
   .master{
@@ -29,7 +26,7 @@ img {
     max-width: 115%;
   }
   .Title {
-    font-size: 22px;
+    font-size: 13px;
   }
   .player-choices {
     height: 100%;
@@ -39,6 +36,10 @@ img {
   
  .innerArena-choices-container{
   max-width: 99%;
+ }
+
+ #input.arena-container{
+  gap: 100px
  }
 
   #player-rock{
@@ -103,13 +104,13 @@ img {
  /* ------------- */
 
 .Title{
-  border: solid rgb(0, 0, 255);
+  border: none rgb(0, 0, 255);
   display: flex;
   justify-content: center;
 }
 /* ----- */
 .master{
-  border: solid black;
+  border: none black;
   padding: 50px;
   justify-content: center;
   display: flex;
@@ -117,7 +118,7 @@ img {
 /* -------- */
 .arena-container{
   justify-content: center;
-  border: solid 4px white;
+  border: none 4px white;
   border-radius: 10px;
   width: 800px;
   padding: 20px;
@@ -128,7 +129,7 @@ img {
 }
 /* -------- */
 .statsContainer{
-  border: solid blue;
+  border: none blue;
   justify-content: center;
   
 }
@@ -139,18 +140,18 @@ img {
 }
 /* ---------- */
 #winsContainer{
-  border: solid red;
+  border: none red;
 }
 #loserContainer{
-  border: solid red;
+  border: none red;
 }
 #roundCount{
-  border: solid black;
+  border: none black;
   text-align: center;
   font-size: 20pt;
 }
 .start-container{
-  border: solid red;
+  border: none red;
   justify-content: center;
 }
 
@@ -160,32 +161,32 @@ img {
 }
 /* -------- */
 .names-container{
-  border: solid rgb(243, 255, 9);
+  border: none rgb(243, 255, 9);
   display: flex;
 }
 
 .names-container div{
   flex: 1;
-  border: solid red;
+  border: none red;
   text-align: center;
   font-size: 25pt;
 }
 /* ------- */
 .innerArena-choices-container{
-  border: solid rgb(255, 0, 187);
+  border: none rgb(255, 0, 187);
   display: flex;
   flex-direction: column;
   width: 800px;
 }
 /* ------- */
 .player-choices-container{
-  border: solid rgb(20, 255, 87);
+  border: none rgb(20, 255, 87);
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 .player-choices{
-  border: solid red;
+  border: none red;
   width: 150px;
   height: 130px;
   border-radius: 10px;
@@ -223,7 +224,7 @@ img {
 
 /* -------- */
 #rps{
-  border: solid rgb(234, 255, 0);
+  border: none rgb(234, 255, 0);
   text-align: center;
   display: flex;
   align-items: center;
@@ -231,7 +232,7 @@ img {
 }
 
 #rps div{
-  border: solid red;
+  border: none red;
   padding: 70px;
   height: 3px;
 }
@@ -242,29 +243,29 @@ img {
 }
 /* --------- */
 .computer-choices{
-  border: solid red;
+  border: none red;
   padding: 45px;
 }
 .computer-choices-container{
-  border: solid red;
+  border: none red;
   flex-direction: column;
   display: flex;
 }
 /* ------- */
 .scores-container{
-  border: solid red;
+  border: none red;
   display: flex;
 }
 
 .scores-container div{
   text-align: center;
   flex: 1;
-  border: solid blue;
+  border: none blue;
   font-size: 20pt;
 }
 /* -------- */
 .playAgain-container{
-  border: solid red;
+  border: none red;
   justify-content: center;
   display: flex;
 
@@ -273,7 +274,7 @@ img {
 
 #playAgain{
   background-color: white;
-  border: solid;
+  border: none;
   padding: 8px;
   border-radius: 5px;
   transition: all 0.3s;
